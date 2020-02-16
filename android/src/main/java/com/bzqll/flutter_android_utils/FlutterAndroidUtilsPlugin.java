@@ -75,6 +75,8 @@ public class FlutterAndroidUtilsPlugin implements MethodCallHandler {
       result.success(isVpnUsed(context));
     } else if (call.method.equals("getProxyNetwork")) {
       result.success(isWifiProxy());
+    } else if (call.method.equals("getUserAgent")) {
+      result.success(System.getProperty("http.agent"));
     } else if (call.method.equals("getKuWoEncrypt")) {
       String q = call.argument("q");
       if(q==null){
